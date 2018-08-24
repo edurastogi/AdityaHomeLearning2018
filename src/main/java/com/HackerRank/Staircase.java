@@ -21,6 +21,7 @@ public class Staircase {
 
             int j = n;
 
+
             // loop to print (size - i) spaces
             while(j-- > i) {
                 System.out.print(" ");
