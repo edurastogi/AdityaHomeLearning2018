@@ -1,12 +1,10 @@
 package com.general;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class PracticeStream {
@@ -19,7 +17,10 @@ public class PracticeStream {
 
         //flatMapExample();
 
-        reductionExample();
+        //reductionExample();
+
+
+        collectorExamples();
 
         //Creating a stream
         /*List<String> strings = Arrays.asList("one","two","three","four","five");
@@ -71,6 +72,66 @@ public class PracticeStream {
 
         System.out.println("Done!");
         System.out.println("size = " + list.size());*/
+    }
+
+    private static void collectorExamples() {
+        List<Person> person = populatePersonList();
+
+        Optional<Person> minAge = person
+                .stream()
+                .filter(p -> p.getAge() >= 20)
+                .min(Comparator.comparing(Person::getAge));
+        System.out.println(minAge);
+
+        Optional<Person> maxAge = person
+                .stream()
+                .filter(p -> p.getAge() >= 20)
+                .max(Comparator.comparing(Person::getAge));
+        System.out.println(maxAge);
+
+        Map<Integer, List<Person>> map = person
+                .stream()
+                .collect(Collectors.groupingBy(Person::getAge));
+        System.out.println(map);
+
+        Map<Integer, Long> mapCounting = person
+                .stream()
+                .collect(Collectors.groupingBy(
+                        Person::getAge,
+                        Collectors.counting()
+                ));
+        System.out.println(mapCounting);
+
+        Map<Integer, String> mapCountingName = person
+                .stream()
+                .collect(Collectors.groupingBy(
+                        Person::getAge,
+                        Collectors.mapping(
+                                Person::getName,
+                                //Collectors.toList()
+                                //Collectors.toCollection(TreeSet::new)
+                                Collectors.joining(", ")
+                        )
+                ));
+        System.out.println(mapCountingName);
+    }
+
+    private static List<Person> populatePersonList() {
+        List<Person> person = new ArrayList<>();
+        person.add(new Person("a",12));
+        person.add(new Person("b",12));
+        person.add(new Person("c",15));
+        person.add(new Person("d",15));
+        person.add(new Person("e",18));
+        person.add(new Person("f",18));
+        person.add(new Person("g",18));
+        person.add(new Person("h",25));
+        person.add(new Person("i",35));
+        person.add(new Person("j",45));
+        person.add(new Person("k",45));
+        person.add(new Person("l",65));
+        person.add(new Person("m",70));
+        return person;
     }
 
     public static void firstPredicate() {
