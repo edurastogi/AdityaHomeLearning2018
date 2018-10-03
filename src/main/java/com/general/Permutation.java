@@ -8,7 +8,7 @@ import java.util.Map;
 public class Permutation {
     public static void main(String[] args) {
         String a = "abcd";
-        String b = "bpda";
+        String b = "bcda";
         System.out.println(isPermutation(a, b));
     }
 
@@ -19,12 +19,16 @@ public class Permutation {
         String[] aArray = a.split("(?!^)");
         String[] bArray = b.split("(?!^)");
         for (String s : aArray) {
+            //TODO: This will will not work in case of repeating alphabets,
             aMap.put(s, s);
         }
         for (String s : bArray) {
             if (!aMap.containsKey(s)) {
                 isPer = false;
                 break;
+            }else {
+
+                aMap.remove(s);
             }
         }
         return isPer;
