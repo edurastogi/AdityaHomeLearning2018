@@ -1,4 +1,4 @@
-package practical.data.structure.prerequisite_oop;
+package practicle.data.structure.prerequisite_oop;
 
 public class Human {
     String name;
