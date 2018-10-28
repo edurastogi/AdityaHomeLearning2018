@@ -5,14 +5,19 @@ public class App {
         App app = new App();
 
         //Test Manual List
-       //app.testManaulSinglyList();
+       app.testManualSinglyList();
 
-        //test single linked list
+        //Test single linked list
         app.testSinglyLinkedList();
+
+        //Test circular linked list
+        app.testCircularLinkedList();
     }
 
-    public void testSinglyLinkedList(){
-        SinglyLinkedList myList = new SinglyLinkedList();
+
+    public void testCircularLinkedList(){
+        System.out.println("...Testing CircularLinkedList....");
+        CircularLinkedList myList = new CircularLinkedList();
 
         myList.insertFirst(100);
         myList.insertFirst(50);
@@ -23,6 +28,23 @@ public class App {
         myList.displayList();
     }
 
+    public void testSinglyLinkedList(){
+        System.out.println("...Testing Single List List....");
+        SinglyLinkedList myList = new SinglyLinkedList();
+        myList.insertFirst(100);
+        myList.insertFirst(50);
+        myList.insertFirst(99);
+        myList.insertFirst(88);
+        myList.insertLast(99999);
+        myList.displayList();
+    }
+
+    public void testManualSinglyList(){
+        System.out.println("...Testing Manual Linked List...");
+        Node manualListFist = manualSingleLinkedList();
+        System.out.println(listLength(manualListFist));
+    }
+
     public static int listLength(Node node) {
         int length = 0;
         Node current = node;
@@ -31,11 +53,6 @@ public class App {
             current = current.next;
         }
         return length;
-    }
-
-    public void testManaulSinglyList(){
-        Node manualListFist = manualSingleLinkedList();
-        System.out.println(listLength(manualListFist));
     }
 
     public Node manualSingleLinkedList(){
