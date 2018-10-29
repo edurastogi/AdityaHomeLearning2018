@@ -4,15 +4,42 @@ public class App {
     public static void main(String[] args) {
         App app = new App();
 
-        //Test Manual List
+       /* //Test Manual List
        app.testManualSinglyList();
 
         //Test single linked list
         app.testSinglyLinkedList();
 
         //Test circular linked list
-        app.testCircularLinkedList();
+        app.testCircularLinkedList();*/
+
+        //Test Doubly Linked List
+        app.testDoublyLinkedList();
+
+
     }
+
+    public void testDoublyLinkedList(){
+        DoublyLinkedList dList = new DoublyLinkedList();
+        dList.insertFirst(22);
+        dList.insertFirst(44);
+        dList.insertFirst(66);
+        dList.insertLast(11);
+        dList.insertLast(33);
+        dList.insertLast(55);
+        dList.displayForward();
+        dList.displayBackword();
+        dList.deleteFist();
+        dList.deleteLast();
+        dList.deleteKey(11);
+        dList.displayForward();
+        dList.insertAfter(22,77);
+        dList.insertAfter(33,88);
+        dList.displayForward();
+
+    }
+
+
 
 
     public void testCircularLinkedList(){
