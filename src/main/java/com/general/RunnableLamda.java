@@ -18,7 +18,6 @@ public class RunnableLamda {
         };
 
         Thread t = new Thread(runnableLambda);
-        t.start();
-        t.join();
+        t.start();        t.join();
     }
 }
