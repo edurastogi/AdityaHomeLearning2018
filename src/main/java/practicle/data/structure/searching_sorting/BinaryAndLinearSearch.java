@@ -1,8 +1,8 @@
-package practicle.data.structure.search_algorithm;
+package practicle.data.structure.searching_sorting;
 
 import java.util.Arrays;
 
-public class App {
+public class BinaryAndLinearSearch {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5, 6};
         int x = 4;
