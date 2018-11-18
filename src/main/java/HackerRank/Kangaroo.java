@@ -1,4 +1,4 @@
-package com.HackerRank;
+package HackerRank;
 
 public class Kangaroo {
     public static void main(String[] args) {

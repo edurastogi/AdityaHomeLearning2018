@@ -1,4 +1,4 @@
-package com.HackerRank;
+package HackerRank;
 
 public class GradingStudent {
     public static void main(String[] args) {

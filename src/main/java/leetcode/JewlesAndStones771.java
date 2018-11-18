@@ -1,6 +1,7 @@
-package com.general;
+package leetcode;
 
-import java.util.HashMap;
+import com.general.UtilityClass;
+
 import java.util.Map;
 
 public class JewlesAndStones771 {
@@ -12,17 +13,7 @@ public class JewlesAndStones771 {
 
     private static int numJewelsInStones(String J, String S) {
         int out = 0;
-        Map<Character, Integer> sMap = new HashMap<>();
-        for (int i = 0; i < S.length(); i++) {
-            char c = S.charAt(i);
-            Integer value = sMap.get(c);
-            if (value != null) {
-                value = value + 1;
-            } else {
-                value = 1;
-            }
-            sMap.put(c, value);
-        }
+        Map<Character, Integer> sMap = UtilityClass.getStringCharMap(S);
         for (int i = 0; i < J.length(); i++) {
             Integer value = sMap.get(J.charAt(i));
             if (value != null) out = out + value;

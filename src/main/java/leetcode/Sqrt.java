@@ -1,4 +1,4 @@
-package com.leetcode;
+package leetcode;
 
 public class Sqrt {
     public static void main(String[] args) {

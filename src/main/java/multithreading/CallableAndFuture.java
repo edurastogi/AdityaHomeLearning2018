@@ -1,4 +1,4 @@
-package com.multithreading;
+package multithreading;
 
 import java.io.IOException;
 import java.util.Random;
