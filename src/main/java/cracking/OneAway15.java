@@ -13,9 +13,9 @@ pale, bake -> false
  */
 
     public static void main(String[] args) {
-        String s1 = "pale";
-        String s2 = "pal";
-        System.out.printf("Is %s , %s one away : %s ", s1, s2, isOneAway(s1, s2));
+        System.out.printf("Is %s , %s one away : %s  %n", "pale", "pal", isOneAway("pale", "pal"),1);
+        System.out.printf("Is %s , %s one away : %s %n", "pale", "bale", isOneAway("pale", "bale"),1);
+        System.out.printf("Is %s , %s one away : %s %n", "pale", "bake", isOneAway("pale", "bake"),1);
     }
 
     private static boolean isOneAway(String s1, String s2) {
@@ -40,7 +40,12 @@ pale, bake -> false
             }
             return true;
         } else if (lengthDiff == 0) {
-
+            int counter =0;
+            for (int i = 0; i <s1.length() ; i++) {
+                if(s1.charAt(i)!= s2.charAt(i)) counter++;
+            }
+            if(counter > 1) return false;
+            return true;
         }
 
 
