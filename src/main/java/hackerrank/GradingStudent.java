@@ -1,4 +1,4 @@
-package HackerRank;
+package hackerrank;
 
 public class GradingStudent {
     public static void main(String[] args) {

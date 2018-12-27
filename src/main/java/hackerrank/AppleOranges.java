@@ -1,4 +1,4 @@
-package HackerRank;
+package hackerrank;
 
 public class AppleOranges {
     public static void main(String[] args) {
