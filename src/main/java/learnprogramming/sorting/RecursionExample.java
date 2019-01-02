@@ -1,4 +1,4 @@
-package learnprogramming;
+package learnprogramming.sorting;
 
 public class RecursionExample {
     public static void main(String[] args) {

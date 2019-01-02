@@ -1,4 +1,4 @@
-package learnprogramming;
+package learnprogramming.sorting;
 
 import java.util.Arrays;
 
