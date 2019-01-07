@@ -1,6 +1,9 @@
-package learnprogramming.lists;
+package learnprogramming.lists.singlelinkedlist;
+
+import learnprogramming.lists.Employee;
 
 public class SingleLinkedListExample {
+
     public static void main(String[] args) {
 
         Employee janeJones = new Employee("Jane", "Jones", 123);
@@ -8,7 +11,7 @@ public class SingleLinkedListExample {
         Employee marySmith = new Employee("Mery", "Smith", 22);
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
 
-        EmployeeLinkedList list = new EmployeeLinkedList();
+        EmployeeSingleLinkedList list = new EmployeeSingleLinkedList();
         System.out.println(list.isEmpty());
 
         list.addToFront(janeJones);

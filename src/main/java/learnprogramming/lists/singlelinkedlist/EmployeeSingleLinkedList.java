@@ -1,6 +1,9 @@
-package learnprogramming.lists;
+package learnprogramming.lists.singlelinkedlist;
 
-public class EmployeeLinkedList {
+import learnprogramming.lists.Employee;
+import learnprogramming.lists.EmployeeNode;
+
+public class EmployeeSingleLinkedList {
 
     private EmployeeNode head;
     private int size;
