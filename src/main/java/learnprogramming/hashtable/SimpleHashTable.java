@@ -41,6 +41,26 @@ public class SimpleHashTable{
         return hashtable[hashKey].employee;
     }
 
+    public Employee remove(String key){
+        int hashedKey = findKey(key);
+        if(hashedKey == -1){
+            return null;
+        }
+
+        Employee employee = hashtable[hashedKey].employee;
+        hashtable[hashedKey] = null;
+
+        //re-hashing
+        StoredEmployee[] oldHashtable = hashtable;
+        hashtable = new StoredEmployee[oldHashtable.length];
+        for(int i = 0; i < oldHashtable.length; i++){
+            if(oldHashtable[i] !=null){
+                put(oldHashtable[i].key,oldHashtable[i].employee);
+            }
+        }
+        return employee;
+    }
+
     private int hashKey(String key){
         //return key.hashCode() % hashtable.length;
         return key.length() % hashtable.length;
@@ -61,19 +81,17 @@ public class SimpleHashTable{
             hashedKey++;
         }
 
-        while(hashedKey != stopIndex
-                && hashtable[hashedKey] != null
+        while((hashedKey != stopIndex)
+                && (hashtable[hashedKey] != null)
                 && !hashtable[hashedKey].key.equals(key)){
             hashedKey = (hashedKey + 1) % hashtable.length;
         }
 
-        if(stopIndex == hashedKey){
-            return -1;
-        }else{
+        if(hashtable[hashedKey] !=null && hashtable[hashedKey].key.equals(key)){
             return hashedKey;
+        }else{
+            return -1;
         }
-
-
     }
 
     private boolean occupied(int index){
