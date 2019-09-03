@@ -1,3 +1,4 @@
+/*
 import java8.stream.examples.Employee;
 import java8.stream.examples.EmployeeRepository;
 import org.junit.AfterClass;
@@ -444,3 +445,6 @@ public class EmployeeTest {
         assertThat(str, contains("refer", "level"));
     }
 }
+
+
+ */
