@@ -17,10 +17,10 @@ public class BasicStreamExamples{
         //getting stream from collection
         Stream<String> stream = items.stream();
 
-        //getting stream, applying filter and the collecting object in list
         List<String> filtered = items.stream()
                 .filter(item -> item.startsWith("o"))
                 .collect(Collectors.toList());
+        //getting stream, applying filter and the collecting object in list
 
         List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
 
@@ -60,6 +60,8 @@ public class BasicStreamExamples{
                 .mapToInt(Integer::parseInt)
                 .max()
                 .ifPresent(System.out::println);
+
+
 
 
 
